@@ -1,0 +1,92 @@
+#- tpr.univ-lyon1.fr
+#dn: dc=tpr,dc=univ-lyon1,dc=fr
+#objectClass: top
+#objectClass: dcObject
+#objectClass: organization
+#o: tpr
+#dc: tpr
+
+# admin, tpr.univ-lyon1.fr
+#dn: cn=admin,dc=tpr,dc=univ-lyon1,dc=fr
+#objectClass: organizationalRole
+#cn: Manager
+
+# Group, tpr.univ-lyon1.fr
+dn: ou=Group,dc=tpr,dc=univ-lyon1,dc=fr
+ou: Group
+objectClass: top
+objectClass: organizationalUnit
+description: Groupes des utilisateurs identifies par ldap
+
+
+
+# People, tpr.univ-lyon1.fr
+dn: ou=People,dc=tpr,dc=univ-lyon1,dc=fr
+ou: People
+objectClass: top
+objectClass: organizationalUnit
+description: Utilisateurs identifies par ldap
+
+# rico, People
+dn: uid=frico,ou=People,dc=tpr,dc=univ-lyon1,dc=fr
+uid: frico
+cn: Fabien Rico
+objectClass: account
+objectClass: posixAccount
+objectClass: top
+objectClass: shadowAccount
+shadowLastChange: 12556
+shadowMax: 99999
+loginShell: /bin/bash
+uidNumber: 1500
+gidNumber: 500
+homeDirectory: /home/frico
+gecos: Fabien Rico
+# mdp totoplop
+userPassword:: e1NTSEF9bUlCUFVrVmtSVWZ5blZ6YUgzRzdDUURrdG00MWR6OGYK
+
+# dn: cn=lecteur,dc=tpr,dc=univ-lyon1,dc=fr
+# objectClass: account
+# objectClass: posixAccount
+# objectClass: shadowAccount
+# cn: lecteur
+# uid: lecteur
+# uidNumber: 100
+# gidNumber: 100
+# homeDirectory: /dev/null
+# # le mdp est crypté et en bas64 s'il fait plus de 8 carrac
+# userPassword:: e1NTSEF9akphMDNPVW5lSHNlUCsyaWpOV2lWYVluNmN2QStKakQK
+
+# chaprot, People
+dn: uid=chaprot,ou=People,dc=tpr,dc=univ-lyon1,dc=fr
+uid: chaprot
+cn: Marcel Chaprot
+objectClass: account
+objectClass: posixAccount
+objectClass: top
+objectClass: shadowAccount
+shadowLastChange: 12556
+shadowMax: 99999
+loginShell: /bin/bash
+uidNumber: 1500
+gidNumber: 500
+homeDirectory: /home/mchaprot
+gecos: Marcel Chaprot
+userPassword:: e1NTSEF9V1hhNTJXaHRreFN5dEZoVUZMWGVnRlhXRW5DQ3Q1NkcK
+
+# newton, People
+dn: uid=newton,ou=People,dc=tpr,dc=univ-lyon1,dc=fr
+uid: newton
+cn: Isaac Newton
+objectClass: account
+objectClass: posixAccount
+objectClass: top
+objectClass: shadowAccount
+shadowLastChange: 12556
+shadowMax: 99999
+loginShell: /bin/bash
+uidNumber: 1502
+gidNumber: 500
+homeDirectory: /home/inewton
+gecos: Isaac Newton
+userPassword:: e1NTSEF9V1hhNTJXaHRreFN5dEZoVUZMWGVnRlhXRW5DQ3Q1NkcK
