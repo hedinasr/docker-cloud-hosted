@@ -18,6 +18,7 @@
    ```
 
 3. Then open in your web-browser
+
    | Service       | Address                |
    | ------------- |:----------------------:|
    | Nextcloud     | http://localhost:8080/ |
