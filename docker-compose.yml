@@ -1,6 +1,18 @@
 version: '3.7'
 
 services:
+  nginx:
+    build:
+      context: .docker/nginx
+    ports:
+      - 8080:80
+    depends_on:
+      - rocketchat
+      - nextcloud
+      - wordpress
+    networks:
+      - vswitch
+
   mariadb:
     image: mariadb:10.4
     env_file:
@@ -39,8 +51,6 @@ services:
       context: .docker/nextcloud
     env_file:
       - .env.local
-    ports:
-      - 8080:80
     depends_on:
       - mariadb
     networks: 
@@ -57,8 +67,6 @@ services:
         done; (exit $$s)"
     env_file:
       - .env.local
-    ports:
-      - 8081:3000
     depends_on:
       - mongo
       - mongo-init-replica
@@ -73,8 +81,6 @@ services:
       - .env.local
     volumes:
       - www:/var/www/html
-    ports:
-      - 8082:80
     depends_on:
       - mariadb
     networks: 

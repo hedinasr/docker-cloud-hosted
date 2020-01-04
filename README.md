@@ -9,15 +9,20 @@
 
 1. Clone repository to your local machine
    ```
-   git clone
+   git clone https://github.com/Ananasr/docker-cloud-hosted.git
    ```
 
-2. Run `docker-compose`
+2. Add `cloud.local.fr` to your `/etc/hosts`
+   ```
+   echo 127.0.0.1 cloud.local.fr | sudo tee -a /etc/hosts
+   ```
+
+3. Run `docker-compose`
    ```
    docker-compose up -d
    ```
 
-3. Then open in your web-browser
+4. Then open in your web-browser
 
    | Service       | Address                |
    | ------------- |:----------------------:|
