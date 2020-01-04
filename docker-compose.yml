@@ -5,7 +5,7 @@ services:
     build:
       context: .docker/nginx
     ports:
-      - 8080:80
+      - 80:80
     depends_on:
       - rocketchat
       - nextcloud
@@ -51,6 +51,8 @@ services:
       context: .docker/nextcloud
     env_file:
       - .env.local
+    ports:
+      - 8080:80
     depends_on:
       - mariadb
     networks: 
@@ -93,7 +95,7 @@ services:
       - .env.local
     command: >
       bash -c
-        "wp core install --url=http://localhost:8082/ --title=Welcome --admin_user=$${ADMIN_USERNAME} --admin_password=$${ADMIN_PASS} --admin_email=$${ADMIN_MAIL} && wp plugin install simple-ldap-login"
+        "wp core install --url=http://localhost --title=Welcome --admin_user=$${ADMIN_USERNAME} --admin_password=$${ADMIN_PASS} --admin_email=$${ADMIN_MAIL} && wp plugin install simple-ldap-login"
     volumes:
       - www:/var/www/html
     depends_on: 

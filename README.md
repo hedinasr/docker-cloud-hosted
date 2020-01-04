@@ -24,8 +24,8 @@
 
 4. Then open in your web-browser
 
-   | Service       | Address                |
-   | ------------- |:----------------------:|
-   | Nextcloud     | http://localhost:8080/ |
-   | Rocket.Chat   | http://localhost:8081/ |
-   | WordPress     | http://localhost:8082/ |
+   | Service       | Address                              |
+   | ------------- | ------------------------------------ |
+   | Nextcloud     | http://localhost:8080/               |
+   | Rocket.Chat   | http://cloud.local.fr/chat           |
+   | WordPress     | http://cloud.local.fr/wp             |
