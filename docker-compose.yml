@@ -2,14 +2,15 @@ version: '3.7'
 
 services:
   nginx:
-    build:
-      context: .docker/nginx
+    image: jwilder/nginx-proxy
     ports:
       - 80:80
     depends_on:
       - rocketchat
       - nextcloud
       - wordpress
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro
     networks:
       - vswitch
 
@@ -49,6 +50,8 @@ services:
   nextcloud:
     build:
       context: .docker/nextcloud
+    environment:
+      - VIRTUAL_HOST=cloud.hosted.local
     env_file:
       - .env.local
     ports:
@@ -69,6 +72,8 @@ services:
         done; (exit $$s)"
     env_file:
       - .env.local
+    environment:
+      - VIRTUAL_HOST=chat.hosted.local
     depends_on:
       - mongo
       - mongo-init-replica
@@ -79,6 +84,8 @@ services:
   wordpress: 
     build:
       context: .docker/wordpress
+    environment:
+      - VIRTUAL_HOST=blog.hosted.local
     env_file:
       - .env.local
     volumes:

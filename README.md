@@ -12,9 +12,9 @@
    git clone https://github.com/Ananasr/docker-cloud-hosted.git
    ```
 
-2. Add `cloud.local.fr` to your `/etc/hosts`
+2. Add these domains to your `/etc/hosts`
    ```
-   echo 127.0.0.1 cloud.local.fr | sudo tee -a /etc/hosts
+   echo 127.0.0.1 {cloud,chat,blog}.hosted.local | sudo tee -a /etc/hosts
    ```
 
 3. Run `docker-compose`
@@ -26,6 +26,6 @@
 
    | Service       | Address                              |
    | ------------- | ------------------------------------ |
-   | Nextcloud     | http://localhost:8080/               |
-   | Rocket.Chat   | http://cloud.local.fr/chat           |
-   | WordPress     | http://cloud.local.fr/wp             |
+   | Nextcloud     | http://cloud.hosted.local/           |
+   | Rocket.Chat   | http://chat.hosted.local/            |
+   | WordPress     | http://blog.hosted.local/            |
