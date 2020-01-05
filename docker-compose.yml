@@ -98,6 +98,9 @@ services:
   wordpress-cli:
     image: wordpress:cli
     user: xfs
+    environment:
+      - HTTP_PROXY=http://proxy.univ-lyon1.fr:3128
+      - HTTPS_PROXY=http://proxy.univ-lyon1.fr:3128
     env_file:
       - .env.local
     command: >

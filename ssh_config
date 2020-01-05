@@ -1,0 +1,10 @@
+Host docker
+     HostName 192.168.78.20
+     User ubuntu
+     ProxyCommand ssh -W %h:%p p1507745@linuxetu.univ-lyon1.fr
+     IdentityFile ~/.ssh/id_rsa
+
+Host linuxetu.univ-lyon1.fr
+     HostName linuxetu.univ-lyon1.fr
+     User p1507745
+     IdentityFile ~/.ssh/id_rsa.pub
