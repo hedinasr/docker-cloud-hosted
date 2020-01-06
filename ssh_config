@@ -7,4 +7,4 @@ Host docker
 Host linuxetu.univ-lyon1.fr
      HostName linuxetu.univ-lyon1.fr
      User p1507745
-     IdentityFile ~/.ssh/id_rsa.pub
+     IdentityFile ~/.ssh/id_rsa
