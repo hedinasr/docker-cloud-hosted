@@ -54,8 +54,6 @@ services:
       - VIRTUAL_HOST=cloud.hosted.local
     env_file:
       - .env.local
-    ports:
-      - 8080:80
     depends_on:
       - mariadb
     networks: 
